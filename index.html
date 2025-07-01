@@ -28,7 +28,7 @@
     // 嘗試後續添加 logo（如果支援）
     var qrcode = document.getElementById("qrcode").getElementsByTagName("canvas")[0];
     var img = new Image();
-    img.src = "https://raw.githubusercontent.com/piclite/picvideo/main/PICLITE%20FUSE%20HOLDER.png";
+    img.src = "https://piclite.github.io/picvideo/";
     img.onload = function() {
       var ctx = qrcode.getContext("2d");
       ctx.drawImage(img, 80, 80, 40, 40); // 調整位置和尺寸
