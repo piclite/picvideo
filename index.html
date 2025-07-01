@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>QR Code 動態內容頁</title>
+  <title>QR Code 動態內容</title>
   <style>
     body {
       font-family: sans-serif;
@@ -20,15 +20,21 @@
   </style>
 </head>
 <body>
-  <!-- rebuild trigger -->
-  <h1>🎉 歡迎使用動態 QR Code 頁面！</h1>
+  <h1>歡迎使用 QR Code</h1>
   <div class="msg" id="message">載入中...</div>
-
+  <div id="qrcode"></div>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   <script>
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name') || params.get('id') || params.get('msg') || '訪客';
     document.getElementById('message').textContent = `Hello, ${name}!`;
+
+    // 生成 QR code
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://youtu.be/oWMpWvwLRNs",
+      width: 128,
+      height: 128
+    });
   </script>
 </body>
 </html>
-Add index.html
