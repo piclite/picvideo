@@ -2,13 +2,31 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>生成 QR Code</title>
-  <style>body {text-align: center; padding-top: 50px;} #qrcode {margin-top: 20px;}</style>
+  <title>生成 QR Code 帶 Logo</title>
+  <style>
+    body {
+      text-align: center;
+      padding-top: 50px;
+    }
+    #qrcode {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <h1>掃描 QR Code</h1>
   <div id="qrcode"></div>
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-  <script>new QRCode(document.getElementById("qrcode"), {text: "https://youtu.be/oWMpWvwLRNs", width: 200, height: 200});</script>
+  <script>
+    // 生成 QR code 並添加 logo
+    new QRCode(document.getElementById("qrcode"), {
+      text: "https://youtu.be/oWMpWvwLRNs",
+      width: 200,
+      height: 200,
+      logo: "https://raw.githubusercontent.com/piclite/picvideo/main/PICLITE%20FUSE%20HOLDER.png",
+      logoWidth: 60,
+      logoHeight: 60
+    });
+  </script>
 </body>
 </html>
