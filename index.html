@@ -2,39 +2,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>QR Code 動態內容</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 50px;
-    }
-    h1 {
-      font-size: 2em;
-    }
-    .msg {
-      color: #007bff;
-      font-size: 1.5em;
-      margin-top: 20px;
-    }
-  </style>
+  <title>生成 QR Code</title>
+  <style>body {text-align: center; padding-top: 50px;} #qrcode {margin-top: 20px;}</style>
 </head>
 <body>
-  <h1>歡迎使用 QR Code</h1>
-  <div class="msg" id="message">載入中...</div>
+  <h1>掃描 QR Code</h1>
   <div id="qrcode"></div>
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get('name') || params.get('id') || params.get('msg') || '訪客';
-    document.getElementById('message').textContent = `Hello, ${name}!`;
-
-    // 生成 QR code
-    new QRCode(document.getElementById("qrcode"), {
-      text: "https://youtu.be/oWMpWvwLRNs",
-      width: 128,
-      height: 128
-    });
-  </script>
+  <script>new QRCode(document.getElementById("qrcode"), {text: "https://youtu.be/oWMpWvwLRNs", width: 200, height: 200});</script>
 </body>
 </html>
