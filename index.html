@@ -18,15 +18,21 @@
   <div id="qrcode"></div>
   <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   <script>
-    // 生成 QR code 並添加 logo
+    // 生成 QR code 並嘗試添加 logo
     new QRCode(document.getElementById("qrcode"), {
       text: "https://youtu.be/oWMpWvwLRNs",
       width: 200,
-      height: 200,
-      logo: "https://raw.githubusercontent.com/piclite/picvideo/main/PICLITE%20FUSE%20HOLDER.png",
-      logoWidth: 60,
-      logoHeight: 60
+      height: 200
     });
+
+    // 嘗試後續添加 logo（如果支援）
+    var qrcode = document.getElementById("qrcode").getElementsByTagName("canvas")[0];
+    var img = new Image();
+    img.src = "https://raw.githubusercontent.com/piclite/picvideo/main/PICLITE%20FUSE%20HOLDER.png";
+    img.onload = function() {
+      var ctx = qrcode.getContext("2d");
+      ctx.drawImage(img, 80, 80, 40, 40); // 調整位置和尺寸
+    };
   </script>
 </body>
 </html>
