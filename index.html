@@ -1,38 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>生成 QR Code 帶 Logo</title>
-  <style>
-    body {
-      text-align: center;
-      padding-top: 50px;
-    }
-    #qrcode {
-      margin-top: 20px;
-    }
-  </style>
+  <meta http-equiv="refresh" content="0; url=https://youtube.com/shorts/roPmv62OYPc" />
+  <title>Redirecting...</title>
 </head>
 <body>
-  <h1>掃描 QR Code</h1>
-  <div id="qrcode"></div>
-  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-  <script>
-    // 生成 QR code 並嘗試添加 logo
-    new QRCode(document.getElementById("qrcode"), {
-      text: "https://youtube.com/shorts/gKC0u5RqjBI?feature=shared",
-      width: 200,
-      height: 200
-    });
-
-    // 嘗試後續添加 logo（如果支援）
-    var qrcode = document.getElementById("qrcode").getElementsByTagName("canvas")[0];
-    var img = new Image();
-    img.src = "https://piclite.github.io/picvideo/";
-    img.onload = function() {
-      var ctx = qrcode.getContext("2d");
-      ctx.drawImage(img, 80, 80, 40, 40); // 調整位置和尺寸
-    };
-  </script>
+  <p>Redirecting to video...</p>
 </body>
 </html>
